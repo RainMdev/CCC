@@ -9,14 +9,14 @@ body {
 
 header {
   background: #333;
-  color: #fff;
+  color: white;
   padding: 2rem;
   text-align: center;
 }
 
 nav a {
   margin: 0 1rem;
-  color: #fff;
+  color: white;
   text-decoration: none;
 }
 
@@ -27,7 +27,7 @@ section {
 }
 
 .project {
-  background: #fff;
+  background: white;
   padding: 1rem;
   margin-bottom: 1rem;
   border-radius: 5px;
@@ -38,7 +38,7 @@ footer {
   text-align: center;
   padding: 1rem;
   background: #333;
-  color: #fff;
+  color: white;
 }
 .nav-button {
     display: inline-block;
