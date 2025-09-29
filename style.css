@@ -50,3 +50,8 @@ footer {
     transition: background-color 0.3s ease, transform 0.2 ease;
     transform: scale(1.05);
 }
+#huh {
+  width: 200px;
+  height: 200px;
+  margin-left: 0px;
+}
