@@ -1,0 +1,29 @@
+body {
+  background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOMJ_G2mOxA-VSeeCYbfmoCBIR00hjGrLt9w8sT3hIj6YsewpR9-kOwVM&s=10);
+  background-size: cover;
+}
+.name {
+  color: darkgreen;
+  background-color:darkseagreen;
+  border-radius: 10px;
+}
+.intro {
+  color: darkgreen;
+  font-size: 23px;
+}
+.skills {
+  color: darkgreen;
+  background-color:darkseagreen;
+  background-size:fit;
+  border-radius: 10px;
+}
+.li {
+  color: darkgreen;
+  font-size: 23px;
+}
+.intro {
+  transition: 0.3s;
+}
+.intro:hover {
+  transform: scale(1.1);
+}
