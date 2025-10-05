@@ -31,3 +31,20 @@ function animateSkills() {
 
 window.addEventListener('scroll', animateSkills);
 window.addEventListener('load', animateSkills);
+
+function observeElements() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-in');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  const animateElements = document.querySelectorAll('.animate-on-scroll');
+  animateElements.forEach(el => observer.observe(el));
+}
+
+observeElements();
