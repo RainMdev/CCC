@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Darren Pajo To Do List</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #e3f4ff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      color: #222;
+    }
+
+    header, footer {
+      background-color: #1283ee;
+      color: #fff;
+      text-align: center;
+      font-style: italic;
+      padding: 25px 0;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      padding: 30px;
+      flex-wrap: wrap;
+      flex: 1;
+    }
+
+    .left, .right {
+      width: 48%;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      overflow: hidden;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    caption {
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 15px;
+      background-color: #f3faff;
+      color: #444;
+      font-size: 1.1em;
+      border-bottom: 2px solid #0c7eff;
+    }
+
+    th, td {
+      border: 1px solid #e0e0e0;
+      padding: 18px 25px;
+      text-align: center;
+      font-size: 0.95em;
+      transition: background-color 0.3s ease;
+    }
+
+    th {
+      background-color: #0c7eff;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    tr:nth-child(even) td {
+      background-color: #f7fbff;
+    }
+
+    /* 🔹 Hover Effect */
+    tr:hover td {
+      background-color: #cfe8ff;
+      cursor: pointer;
+    }
+
+    a {
+      color: #0c7eff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: auto;
+      font-size: 1em;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 768px) {
+      .left, .right {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Darren Pajo To Do List</h1>
+  </header>
+
+  <div class="container">
+    <div class="left">
+      <table>
+        <caption>To-Do & Links</caption>
+        <tr><th>Task / Link</th></tr>
+        <tr><td>Wake up</td></tr>
+        <tr><td>Eat breakfast</td></tr>
+        <tr><td>Work</td></tr>
+        <tr><td>Do homework</td></tr>
+        <tr><td>Sleep</td></tr>
+        <tr>
+          <td>
+            <a href="https://elms.sti.edu/student_class_dashboard/show/5322827" target="_blank">
+              Visit ELMS Dashboard
+            </a>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="right">
+      <table>
+        <caption>Assignments & Completed Work</caption>
+        <tr>
+          <th>Subject</th>
+          <th>Assignments</th>
+          <th>Completed</th>
+        </tr>
+        <tr>
+          <td>COMPROG 1</td>
+          <td>12</td>
+          <td>8</td>
+        </tr>
+        <tr>
+          <td>COMPROG 2</td>
+          <td>11</td>
+          <td>11</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <footer>
+    <p>GET RICH OR DIE TRYIN</p>
+  </footer>
+</body>
+</html>
