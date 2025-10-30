@@ -20,9 +20,9 @@
   html{scroll-behavior:smooth}
   html,body{height:100%;background:var(--bg);color:var(--accent);font-family:Inter,system-ui;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
-  button{font:inherit;cursor:pointer;border:none} /* Added border:none for buttons */
+  button{font:inherit;cursor:pointer;border:none} 
 
-  /* ---------- VOLUME CONTROL ---------- */
+  
   .volume-control{
     position:fixed;bottom:32px;right:32px;z-index:1100;
     display:none;align-items:center;gap:12px;padding:12px 20px;
@@ -40,7 +40,7 @@
     background:var(--accent);border-radius:999px;width:50%;
   }
 
-  /* ---------- INTRO (fullscreen video + music) ---------- */
+ 
   #intro {
     position:fixed;
     inset:0;
@@ -112,7 +112,7 @@
   #site { opacity:0; pointer-events:none; transition:opacity .6s ease; }
   #site.visible { opacity:1; pointer-events:auto; }
 
-  /* HEADER */
+ 
   header {
     position:fixed;
     top:0; left:0; right:0;
@@ -135,7 +135,7 @@
   .cart-btn{display:inline-flex;align-items:center;gap:10px;padding:6px 10px;border-radius:9px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:var(--muted)}
   .cart-count{background:#ff3b30;color:#fff;border-radius:999px;padding:2px 7px;font-size:12px;margin-left:6px}
 
-  /* HERO */
+  
   .hero{position:relative;height:84vh;min-height:520px;display:flex;align-items:center;justify-content:center;overflow:hidden}
   .hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.35)}
   .hero .center{position:relative;z-index:4;text-align:center;padding:16px;max-width:1100px}
@@ -144,14 +144,14 @@
   .hero .cta{display:inline-block;margin-top:20px;padding:12px 28px;border-radius:999px;border:2px solid rgba(255,255,255,0.12);color:var(--accent);font-weight:700}
   .hero .cta:hover{background:var(--accent);color:var(--bg)}
 
-  /* PRODUCTS */
+  
   .section{padding:64px 6%}
   .section h2{font-size:20px;margin-bottom:18px}
   .products{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
   .card{
     background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));
     padding:12px;border-radius:8px;text-align:center;
-    cursor:pointer; /* Make the card itself clickable */
+    cursor:pointer; 
     transition:transform .2s ease;
   }
   .card:hover { transform: translateY(-4px); }
@@ -159,9 +159,9 @@
   .card img{width:100%;height:260px;object-fit:cover;border-radius:6px}
   .card h3{font-size:15px;margin:10px 0 6px}
   .card p{color:var(--muted)}
-  /* Removed .card .add since button is now inside the modal */
+  
 
-  /* COLLECTIONS SECTION */
+  
   .collections-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px}
   .collection-item{position:relative;overflow:hidden;border-radius:8px;aspect-ratio:4/5;cursor:pointer}
   .collection-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
@@ -173,7 +173,7 @@
   .collection-item:hover .overlay{opacity:1}
   .collection-item h3{font-size:18px;font-weight:700;text-transform:uppercase;letter-spacing:1px}
 
-  /* CONTACT SECTION */
+  
   .contact-form{max-width:600px;margin:24px auto 0}
   .form-group{margin-bottom:20px}
   .form-group label{display:block;margin-bottom:8px;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
@@ -198,10 +198,10 @@
   .contact-info-item h4{font-size:12px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;color:var(--muted);font-weight:600}
   .contact-info-item p{font-size:14px;font-weight:600}
 
-  /* FOOTER */
+  
   footer{padding:28px 6%;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02);text-align:center}
 
-  /* ---------- NEW: PRODUCT MODAL STYLES ---------- */
+  
   .modal-overlay {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
@@ -333,7 +333,7 @@
   .modal-actions {
     display: flex;
     gap: 15px;
-    margin-top: auto; /* Pushes action buttons to the bottom */
+    margin-top: auto;
   }
 
   #modalAddToCartBtn, #modalBuyNowBtn {
@@ -368,7 +368,7 @@
     transform: translateY(-2px);
   }
 
-  /* MEDIA QUERIES FOR MODAL */
+  
   @media(max-width:800px) {
     .product-modal {
       flex-direction: column;
@@ -590,7 +590,7 @@ Street Glory — Liberation Against All Odds.</p>
   const cartCount = document.getElementById('cartCount');
   const contactForm = document.getElementById('contactForm');
   
-  // NEW MODAL ELEMENTS
+  
   const productModalOverlay = document.getElementById('productModalOverlay');
   const modalCloseBtn = document.getElementById('modalCloseBtn');
   const modalProductImage = document.getElementById('modalProductImage');
@@ -602,7 +602,7 @@ Street Glory — Liberation Against All Odds.</p>
   const modalBuyNowBtn = document.getElementById('modalBuyNowBtn');
   const productsGrid = document.getElementById('productsGrid');
 
-  // --- GLOBAL STATE ---
+  
   yearEl.textContent = new Date().getFullYear();
   introAudio.volume = 0.5;
   document.body.style.overflow = 'hidden';
@@ -610,7 +610,7 @@ Street Glory — Liberation Against All Odds.</p>
   let selectedProduct = null;
   let selectedSize = null;
   
-  // --- UTILITY FUNCTIONS ---
+  
   function updateCartCount() {
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     cartCount.textContent = totalItems;
@@ -619,30 +619,30 @@ Street Glory — Liberation Against All Odds.</p>
 
   function showModal() {
     productModalOverlay.classList.add('open');
-    document.body.style.overflow = 'hidden'; // Prevent scrolling the main page
+    document.body.style.overflow = 'hidden'; 
   }
 
   function hideModal() {
     productModalOverlay.classList.remove('open');
-    document.body.style.overflow = 'auto'; // Restore scrolling
-    selectedSize = null; // Clear selected size on close
-    // Remove selected class from size buttons
+    document.body.style.overflow = 'auto'; 
+    selectedSize = null; 
+    
     document.querySelectorAll('.size-option').forEach(btn => btn.classList.remove('selected'));
   }
 
   function populateModal(product) {
-    selectedProduct = product; // Store the product data globally for cart logic
+    selectedProduct = product; 
     
-    // Update content
+   
     modalProductImage.src = product.img;
     modalProductName.textContent = product.name;
     modalProductPrice.textContent = `₱${product.price}`;
     modalProductDescription.textContent = product.description;
 
-    // Reset size buttons
+    
     document.querySelectorAll('.size-option').forEach(btn => btn.classList.remove('selected'));
     
-    // Initial state for buttons
+    
     modalAddToCartBtn.textContent = 'Add to Cart';
     modalAddToCartBtn.disabled = false;
     modalBuyNowBtn.disabled = false;
@@ -670,7 +670,7 @@ Street Glory — Liberation Against All Odds.</p>
     
     if (buyNow) {
       alert(`Buying 1 x ${name} now! Total: ₱${price}. (Normally this would redirect to checkout)`);
-      cart = []; // Clear cart for simplicity after "buy now"
+      cart = []; 
       updateCartCount();
       hideModal();
     } else {
@@ -681,11 +681,11 @@ Street Glory — Liberation Against All Odds.</p>
     }
   }
 
-  // --- EVENT LISTENERS ---
+  
 
-  // 1. Product Card Click (Open Modal)
+  
   productsGrid.addEventListener('click', (e) => {
-    // Traverse up to find the closest '.card' element
+   
     const card = e.target.closest('.card');
     if (card) {
       const productData = {
@@ -701,36 +701,36 @@ Street Glory — Liberation Against All Odds.</p>
     }
   });
 
-  // 2. Modal Close Buttons
+  
   modalCloseBtn.addEventListener('click', hideModal);
   productModalOverlay.addEventListener('click', (e) => {
-    // Close if clicking on the overlay background, not the modal content
+    
     if (e.target === productModalOverlay) {
       hideModal();
     }
   });
 
-  // 3. Size Selection
+ 
   sizeOptionsContainer.addEventListener('click', (e) => {
     const sizeBtn = e.target.closest('.size-option');
     if (sizeBtn) {
-      // Clear all selected states
+      
       document.querySelectorAll('.size-option').forEach(btn => btn.classList.remove('selected'));
-      // Set new selected state
+      
       sizeBtn.classList.add('selected');
       selectedSize = sizeBtn.getAttribute('data-size');
-      // Reset button text just in case it said 'Added!'
+      
       modalAddToCartBtn.textContent = 'Add to Cart';
     }
   });
 
-  // 4. Modal Add to Cart / Buy Now
+ 
   modalAddToCartBtn.addEventListener('click', () => handleAddToCart(false));
   modalBuyNowBtn.addEventListener('click', () => handleAddToCart(true));
 
-  // 5. INTRO & VOLUME LOGIC (Existing code, kept for completeness)
   
-  // Enter site - start music on click
+  
+  
   enterBtn.addEventListener('click', () => {
     introAudio.play().catch(err => console.log('Audio playback blocked:', err));
 
@@ -746,7 +746,7 @@ Street Glory — Liberation Against All Odds.</p>
     }, 620);
   });
 
-  // Volume control functionality
+  
   let isDragging = false;
 
   function updateVolume(e) {
@@ -772,7 +772,7 @@ Street Glory — Liberation Against All Odds.</p>
 
   volumeSlider.addEventListener('click', updateVolume);
 
-  // Smooth scroll for navigation
+  
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
@@ -784,7 +784,7 @@ Street Glory — Liberation Against All Odds.</p>
     });
   });
 
-  // Navigation active state on scroll
+  
   const sections = document.querySelectorAll('section[id]');
   
   function updateActiveNav() {
@@ -808,7 +808,7 @@ Street Glory — Liberation Against All Odds.</p>
 
   window.addEventListener('scroll', updateActiveNav);
 
-  // Cart button click
+  
   cartBtn.addEventListener('click', () => {
     if (cart.length > 0) {
       const cartSummary = cart.map(item => `${item.name} x${item.quantity} - ₱${item.price * item.quantity}`).join('\n');
@@ -819,7 +819,7 @@ Street Glory — Liberation Against All Odds.</p>
     }
   });
 
-  // Contact form submission
+  
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
     alert('Thank you for your message! We\'ll get back to you soon.');
