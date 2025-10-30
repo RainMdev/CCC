@@ -6,6 +6,7 @@
 <title>Street Glory — Liberation Against All Odds</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <style>
   :root {
@@ -141,6 +142,21 @@
 
   @media(max-width:1000px){.products{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:36px}}
   @media(max-width:600px){.products{grid-template-columns:1fr}.hero h1{font-size:26px}}
+  .cart-btn {
+    transition: 0.2s;
+  }
+  .cart-btn:hover {
+    transform: scale(1.1);
+  }
+  .add {
+    transition: 0.3s;
+  }
+  .add:hover {
+    transform: scale(1.1);
+  }
+  .cta {
+    transition: 0.2s;
+  }
 </style>
 </head>
 
@@ -178,7 +194,7 @@
       <a href="#home">Home</a>
       <a href="#shop">Shop</a>
       <a href="#about">About</a>
-      <button id="cartBtn" class="cart-btn">CART <span id="cartCount" class="cart-count" style="display:none">0</span></button>
+      <button id="cartBtn" class="cart-btn"><i class="fas fa-shopping-cart"></i> <span id="cartCount" class="cart-count" style="display:none">0</span></button>
     </nav>
   </header>
 
